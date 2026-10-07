@@ -13,7 +13,11 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true,
+      anchors: { offset: -96 },
+    });
     lenisRef.current = lenis;
 
     let raf = 0;

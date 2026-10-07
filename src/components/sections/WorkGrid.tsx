@@ -36,9 +36,12 @@ export default function WorkGrid() {
               className={cn(i % 2 === 1 && "md:mt-24")}
             >
               <article className="group relative min-h-[520px] overflow-hidden rounded-[26px] bg-navy text-cream">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${w.photo})` }}
+                <img
+                  src={w.photo}
+                  alt={w.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div
                   className="absolute inset-0"

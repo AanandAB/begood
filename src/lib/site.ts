@@ -37,22 +37,22 @@ export const whatsapp = (message: string) =>
   `https://wa.me/${brand.phoneRaw}?text=${encodeURIComponent(message)}`;
 
 export const nav = [
-  { label: "Work", href: "/#work" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Work", href: "#work" },
+  { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 /** Dummy event photography (Unsplash) — swap for real event photography later. */
 export const photos = {
-  hero: asset("/photos/hero.jpg"),
-  corporate: asset("/photos/corporate.jpg"),
-  conference: asset("/photos/conference.jpg"),
-  startup: asset("/photos/startup.jpg"),
-  brand: asset("/photos/brand.jpg"),
-  leadership: asset("/photos/leadership.jpg"),
-  celebration: asset("/photos/celebration.jpg"),
-  stage: asset("/photos/stage.jpg"),
+  hero: asset("/photos/hero.webp"),
+  corporate: asset("/photos/corporate.webp"),
+  conference: asset("/photos/conference.webp"),
+  startup: asset("/photos/startup.webp"),
+  brand: asset("/photos/brand.webp"),
+  leadership: asset("/photos/leadership.webp"),
+  celebration: asset("/photos/celebration.webp"),
+  stage: asset("/photos/stage.webp"),
 };
 
 export const hero = {

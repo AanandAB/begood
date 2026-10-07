@@ -49,9 +49,13 @@ export default function Hero() {
         className="absolute -inset-[5%] will-change-transform"
         style={{ transform: "scale(1.05)" }}
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${hero.photo})`, filter: "saturate(0.8)" }}
+        <img
+          src={hero.photo}
+          alt=""
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ filter: "saturate(0.8)" }}
         />
         <div
           className="absolute inset-0"

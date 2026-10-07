@@ -8,9 +8,12 @@ export default function Details() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="relative min-h-[560px] overflow-hidden rounded-[32px] bg-navy text-cream">
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-40"
-              style={{ backgroundImage: `url(${details.photo})` }}
+            <img
+              src={details.photo}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover opacity-40"
             />
             <div
               className="absolute inset-0"
