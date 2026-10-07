@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
   assetPrefix: "/begood",
   // GitHub Pages has no image optimizer — serve the files as-is.
   images: { unoptimized: true },
+  // Export each route as <route>/index.html so GitHub Pages serves extensionless
+  // URLs (/privacy/, /terms/) correctly instead of 404ing.
+  trailingSlash: true,
   turbopack: {
     rules: {
       "*.css": {
