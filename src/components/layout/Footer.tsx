@@ -1,4 +1,4 @@
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { asset, brand, nav, whatsapp, ctaMessages, BASE_PATH } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
@@ -63,6 +63,13 @@ export default function Footer() {
           >
             <Phone size={16} className="text-teal-bright" />
             {brand.phoneDisplay}
+          </a>
+          <a
+            href={`mailto:${brand.email}`}
+            className="flex items-center gap-2 text-sm text-cream/80 transition-colors hover:text-teal-bright"
+          >
+            <Mail size={16} className="text-teal-bright" />
+            {brand.email}
           </a>
           <a
             href={whatsapp(ctaMessages.general)}

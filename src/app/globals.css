@@ -13,6 +13,7 @@
   --color-cream: #f6f4ef; /* warm white */
   --color-mist: #d9dedf; /* soft gray */
   --color-ink: #050709; /* near black */
+  --color-aqua: #9de3de; /* light mint accent (for dark sections) */
 
   /* Typography — display (geometric) + editorial (serif) */
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;

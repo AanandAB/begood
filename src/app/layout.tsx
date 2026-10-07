@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Space_Grotesk, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/providers/LenisProvider";
+import { PlanModalProvider } from "@/components/planning/PlanModal";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Cursor from "@/components/ui/Cursor";
@@ -37,10 +38,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={`${spaceGrotesk.variable} ${dmSerif.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <LenisProvider>
-          <Cursor />
-          <Navigation />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <PlanModalProvider>
+            <Cursor />
+            <Navigation />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </PlanModalProvider>
         </LenisProvider>
       </body>
     </html>

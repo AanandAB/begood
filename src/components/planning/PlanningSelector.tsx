@@ -3,25 +3,26 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { eventTypes, whatsapp, ctaMessages } from "@/lib/site";
+import { eventTypes } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { usePlanModal } from "@/components/planning/PlanModal";
 
 /**
- * "What are you planning?" — an interactive selector where each choice swaps
- * the accompanying visual world. Phase 1 renders the world as an accent-tinted
- * cinematic panel; real event imagery/stills slot into the marked layer.
+ * "What are you planning?" — a selector whose stage photo (and copy) swaps
+ * with the chosen event type. Dummy photography; real event stills later.
  */
 export default function PlanningSelector() {
   const [active, setActive] = useState(eventTypes[0].id);
   const current = eventTypes.find((t) => t.id === active) ?? eventTypes[0];
+  const { open } = usePlanModal();
 
   return (
-    <section id="what" className="bg-cream py-24 text-ink md:py-32">
+    <section id="services" className="bg-cream py-24 text-ink md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal">
-          What are you planning?
+        <p className="text-xs font-extrabold uppercase tracking-[0.17em] text-teal">
+          01 · What are you planning?
         </p>
-        <h2 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight md:text-6xl">
+        <h2 className="mt-3 max-w-[850px] font-display text-4xl font-bold leading-[0.93] tracking-tight md:text-6xl">
           You bring the reason.
           <br />
           <span className="font-serif italic text-teal">
@@ -49,27 +50,36 @@ export default function PlanningSelector() {
           ))}
         </div>
 
-        {/* Visual world */}
+        {/* Stage + summary */}
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
-              initial={{ opacity: 0, scale: 0.98 }}
+              initial={{ opacity: 0, scale: 0.99 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.35 }}
-              className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-ink"
-              style={{
-                background: `radial-gradient(120% 120% at 20% 20%, ${current.accent} 0%, #050709 65%)`,
-              }}
+              exit={{ opacity: 0, scale: 0.99 }}
+              transition={{ duration: 0.4 }}
+              className="relative aspect-[16/10] overflow-hidden rounded-[28px] bg-navy"
             >
-              {/* Real event imagery/stills land in this layer. */}
-              <span className="absolute left-6 top-6 text-[11px] uppercase tracking-[0.3em] text-cream/50">
-                {current.label}
-              </span>
-              <span className="absolute bottom-6 left-6 max-w-md font-serif text-3xl italic leading-tight text-cream md:text-5xl">
-                {current.tagline}
-              </span>
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.2s]"
+                style={{ backgroundImage: `url(${current.photo})` }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent 30%, rgba(3,12,22,.85))",
+                }}
+              />
+              <div className="absolute bottom-7 left-7 right-7 text-cream">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cream/60">
+                  {current.note}
+                </span>
+                <p className="mt-2 max-w-md font-serif text-3xl italic leading-tight md:text-4xl">
+                  {current.tagline}
+                </p>
+              </div>
             </motion.div>
           </AnimatePresence>
 
@@ -86,21 +96,20 @@ export default function PlanningSelector() {
                 <h3 className="font-display text-2xl font-bold">
                   {current.label}
                 </h3>
+                <p className="mt-1 text-sm text-ink/50">{current.note}</p>
                 <p className="mt-3 text-ink/70">{current.tagline}</p>
               </motion.div>
             </AnimatePresence>
-            <a
-              href={whatsapp(ctaMessages.plan(current.label))}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => open(current.label)}
               className="group mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-navy px-7 py-4 text-sm font-semibold text-cream transition-colors hover:bg-brand"
             >
-              Get a consultation
+              Plan a {current.label.toLowerCase()}
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
               />
-            </a>
+            </button>
           </div>
         </div>
       </div>
