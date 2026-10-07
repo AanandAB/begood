@@ -10,6 +10,7 @@ import {
 } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
+import Link from "next/link";
 import { brand, eventTypes, whatsapp } from "@/lib/site";
 
 type PlanModalContextValue = {
@@ -72,6 +73,7 @@ function PlanModal({
   const [phone, setPhone] = useState("");
   const [type, setType] = useState(initialType);
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
 
   // Build a WhatsApp message from the form (no backend — routes to wa.me).
   const submit = (e: FormEvent) => {
@@ -171,6 +173,23 @@ function PlanModal({
             rows={4}
             className={`${field} resize-y`}
           />
+          <label className="flex items-start gap-3 text-sm text-ink/60">
+            <input
+              type="checkbox"
+              required
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+              className="mt-0.5 h-4 w-4 shrink-0 accent-navy"
+            />
+            <span>
+              I consent to Be Good contacting me about this enquiry and agree
+              to the{" "}
+              <Link href="/privacy" className="text-teal underline">
+                Privacy Policy
+              </Link>
+              .
+            </span>
+          </label>
           <button
             type="submit"
             className="mt-1 rounded-full bg-navy px-6 py-4 font-bold text-cream transition-colors hover:bg-brand"

@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import Link from "next/link";
 import { asset, brand, nav, whatsapp, ctaMessages, BASE_PATH } from "@/lib/site";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
@@ -88,7 +89,14 @@ export default function Footer() {
           <p>
             © {brand.copyrightYear} {brand.legalName}. All rights reserved.
           </p>
-          <p>Cinematic. Precise. Human. Kerala-born, world-ready.</p>
+          <nav className="flex items-center gap-5" aria-label="Legal">
+            <Link href="/privacy" className="transition-colors hover:text-teal-bright">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-teal-bright">
+              Terms
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>
