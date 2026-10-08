@@ -227,9 +227,15 @@ export const trust = {
     { text: "effortless.", accent: true },
     { text: " Our job is to make sure it is.", accent: false },
   ],
-  disclaimer:
-    "Client logos and testimonials go here once real ones are confirmed — we never fabricate them.",
-  logoCount: 6,
+  clients: [
+    "Allianz Technologies",
+    "CareStack",
+    "Experion",
+    "Seqato",
+    "TCS",
+    "Applexus Technologies",
+    "Acsia Technologies",
+  ],
 };
 
 export const contact = {

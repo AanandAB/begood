@@ -25,17 +25,19 @@ export default function Trust() {
                 ),
               )}
             </blockquote>
-            <p className="mt-5 text-xs text-ink/50">{trust.disclaimer}</p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="grid grid-cols-2 gap-px border border-ink/10 bg-ink/10 sm:grid-cols-3">
-              {Array.from({ length: trust.logoCount }).map((_, i) => (
+            <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.17em] text-ink/40">
+              Trusted by
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {trust.clients.map((c) => (
                 <div
-                  key={i}
-                  className="grid min-h-[120px] place-items-center bg-cream px-4 text-center text-[13px] font-extrabold uppercase tracking-[0.08em] text-ink/30"
+                  key={c}
+                  className="flex min-h-[92px] min-w-[168px] items-center justify-center rounded-2xl border border-ink/10 bg-white px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.05em] text-ink/50 transition-colors hover:border-ink/20 hover:text-ink"
                 >
-                  Client logo
+                  {c}
                 </div>
               ))}
             </div>
