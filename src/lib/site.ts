@@ -58,7 +58,15 @@ export const photos = {
 export const hero = {
   eyebrow: "Event consulting · Thiruvananthapuram",
   lines: ["MAKE IT", "A MOMENT."],
-  sub: "From corporate experiences to startup launches, Be Good brings strategy, creativity and precise execution together to create events people remember.",
+  sub: "We plan, design and deliver corporate events, conferences, product launches and brand experiences — for brands, startups and enterprises.",
+  services: [
+    "Corporate Events",
+    "Conferences",
+    "Product Launches",
+    "Brand Experiences",
+    "Startup Events",
+    "Exhibitions",
+  ],
   primaryCta: "Plan your event",
   secondaryCta: "Explore our work",
   photo: photos.hero,
@@ -228,13 +236,13 @@ export const trust = {
     { text: " Our job is to make sure it is.", accent: false },
   ],
   clients: [
-    "Allianz Technologies",
-    "CareStack",
-    "Experion",
-    "Seqato",
-    "TCS",
-    "Applexus Technologies",
-    "Acsia Technologies",
+    { name: "Allianz Technologies", logo: asset("/logos/allianz.png") },
+    { name: "CareStack", logo: asset("/logos/carestack.png") },
+    { name: "Experion", logo: asset("/logos/experion.png") },
+    { name: "Seqato" },
+    { name: "TCS" },
+    { name: "Applexus Technologies", logo: asset("/logos/applexus.png") },
+    { name: "Acsia Technologies", logo: asset("/logos/acsia.png") },
   ],
 };
 

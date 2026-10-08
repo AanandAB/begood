@@ -34,10 +34,21 @@ export default function Trust() {
             <div className="flex flex-wrap justify-center gap-3">
               {trust.clients.map((c) => (
                 <div
-                  key={c}
-                  className="flex min-h-[92px] min-w-[168px] items-center justify-center rounded-2xl border border-ink/10 bg-white px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.05em] text-ink/50 transition-colors hover:border-ink/20 hover:text-ink"
+                  key={c.name}
+                  className="flex min-h-[88px] min-w-[150px] items-center justify-center gap-2.5 rounded-2xl border border-ink/10 bg-white px-5 py-3 transition-colors hover:border-ink/20"
                 >
-                  {c}
+                  {c.logo ? (
+                    <img
+                      src={c.logo}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="h-7 w-7 object-contain"
+                    />
+                  ) : null}
+                  <span className="text-sm font-bold uppercase tracking-[0.04em] text-ink/55">
+                    {c.name}
+                  </span>
                 </div>
               ))}
             </div>

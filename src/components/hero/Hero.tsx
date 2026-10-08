@@ -98,10 +98,25 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="mt-9 max-w-[520px] text-lg leading-relaxed text-cream/70"
+          className="mt-9 max-w-[560px] text-lg leading-relaxed text-cream/80"
         >
           {hero.sub}
         </motion.p>
+
+        {/* What we do — scannable service list */}
+        <motion.div
+          variants={item}
+          className="mt-7 flex flex-wrap items-center gap-2.5"
+        >
+          {hero.services.map((s) => (
+            <span
+              key={s}
+              className="rounded-full border border-cream/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-cream/75"
+            >
+              {s}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.div
           variants={item}
