@@ -195,6 +195,20 @@ export const workItems = [
     desc: "Story, reveal & community",
     photo: photos.stage,
   },
+  {
+    id: "05",
+    category: "Corporate",
+    title: "Leadership Offsite",
+    desc: "Two days, one aligned team",
+    photo: photos.corporate,
+  },
+  {
+    id: "06",
+    category: "Celebration",
+    title: "Award Night",
+    desc: "Recognition, produced with theatre",
+    photo: photos.celebration,
+  },
 ];
 
 export const processSteps = [
@@ -241,7 +255,7 @@ export const trust = {
   },
   clients: [
     { name: "Tata Elxsi", logo: asset("/logos/tataelxsi.png") },
-    { name: "TCS" },
+    { name: "Nissan", logo: asset("/logos/nissan.png") },
     { name: "Allianz Technologies", logo: asset("/logos/allianz.png") },
     { name: "CareStack", logo: asset("/logos/carestack.png") },
     { name: "Experion", logo: asset("/logos/experion.png") },
