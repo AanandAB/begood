@@ -142,6 +142,19 @@ html.lenis body {
   }
 }
 
+/* ------------------------ Carousel progress ------------------------ */
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.progress-bar {
+  animation: progress 6s linear forwards;
+}
+
 /* --------------------------- Reduced motion ---------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
