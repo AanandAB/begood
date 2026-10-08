@@ -67,8 +67,18 @@ export const hero = {
     "Startup Events",
     "Exhibitions",
   ],
+  marquee: [
+    "Corporate Events",
+    "Conferences",
+    "Product Launches",
+    "Brand Experiences",
+    "Exhibitions",
+    "Startup Launches",
+    "Award Nights",
+    "Live Shows",
+  ],
   primaryCta: "Plan your event",
-  secondaryCta: "Explore our work",
+  secondaryCta: "Showreel",
   photo: photos.hero,
 };
 
