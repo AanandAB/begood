@@ -235,12 +235,17 @@ export const trust = {
     { text: "effortless.", accent: true },
     { text: " Our job is to make sure it is.", accent: false },
   ],
+  notable: {
+    label: "On stage at our events",
+    names: ["A.R. Rahman", "Harisankar", "Shashi Tharoor"],
+  },
   clients: [
+    { name: "Tata Elxsi", logo: asset("/logos/tataelxsi.png") },
+    { name: "TCS" },
     { name: "Allianz Technologies", logo: asset("/logos/allianz.png") },
     { name: "CareStack", logo: asset("/logos/carestack.png") },
     { name: "Experion", logo: asset("/logos/experion.png") },
     { name: "Seqato" },
-    { name: "TCS" },
     { name: "Applexus Technologies", logo: asset("/logos/applexus.png") },
     { name: "Acsia Technologies", logo: asset("/logos/acsia.png") },
   ],

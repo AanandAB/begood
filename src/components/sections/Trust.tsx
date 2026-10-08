@@ -25,6 +25,14 @@ export default function Trust() {
                 ),
               )}
             </blockquote>
+            <div className="mt-8 border-t border-ink/10 pt-6">
+              <p className="text-xs font-extrabold uppercase tracking-[0.17em] text-ink/40">
+                {trust.notable.label}
+              </p>
+              <p className="mt-3 font-display text-xl font-bold tracking-tight text-ink md:text-2xl">
+                {trust.notable.names.join("  ·  ")}
+              </p>
+            </div>
           </Reveal>
 
           <Reveal delay={0.1}>
